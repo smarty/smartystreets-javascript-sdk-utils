@@ -1,0 +1,19 @@
+{
+  "name": "smartystreets-javascript-sdk-utils",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'tests/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartystreets/smartystreets-javascript-sdk-utils.git"
+  },
+  "author": "SmartyStreets SDK Team <support@smartystreets.com> (https://www.smartystreets.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils/issues"
+  },
+  "homepage": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils#readme"
+}
