@@ -3,9 +3,13 @@ const expect = chai.expect;
 const isMissingSecondary = require("../src/isMissingSecondary");
 
 describe("An address missing a secondary number", function () {
-	it("fill in this", function () {
-		const missingSecondaryAddress = [{}, {}];
+	it("is indicated with 'N1' or 'R1' dpv footnotes, or by 'H#' in the footnotes.", function () {
+		const n1Address = [{
+			analysis: {
+				dpvFootnotes: "N1",
+			},
+		}];
 
-		expect(isMissingSecondary(missingSecondaryAddress)).to.equal(true);
+		expect(isMissingSecondary(n1Address)).to.equal(true);
 	});
 });
