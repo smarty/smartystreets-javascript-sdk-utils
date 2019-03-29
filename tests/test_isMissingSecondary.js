@@ -11,7 +11,7 @@ describe("An address missing a secondary number", function () {
 		}];
 		const r1Address = [{
 			analysis: {
-				dpvFootnotes: "N1",
+				dpvFootnotes: "R1",
 			},
 		}];
 
