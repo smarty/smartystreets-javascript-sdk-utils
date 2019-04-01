@@ -25,9 +25,13 @@ describe("An address missing a secondary number", function () {
 				footnotes: "H#",
 			},
 		}];
+		const noQualifyingFootnotesPresent = [{
+			analysis: {}
+		}];
 
 		expect(isMissingSecondary(n1Address)).to.equal(true);
 		expect(isMissingSecondary(r1Address)).to.equal(true);
 		expect(isMissingSecondary(hSharpAddress)).to.equal(true);
+		expect(isMissingSecondary(noQualifyingFootnotesPresent)).to.equal(false);
 	});
 });
