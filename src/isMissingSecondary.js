@@ -1,6 +1,5 @@
 function isMissingSecondary (result) {
 	const noResults = result.length === 0;
-	const foo = false;
 
 	if (noResults) {
 		return false;
