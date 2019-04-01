@@ -42,4 +42,14 @@ describe("An invalid address", function () {
 		expect(isInvalid(addressPrecisionPremise)).to.equal(false);
 		expect(isInvalid(addressPrecisionDeliveryPoint)).to.equal(false);
 	});
+
+	it("is exactly one item and has a dpv match code of 'N'", function () {
+		const invalidAddress = [{
+			analysis: {
+				dpvMatchCode: "N",
+			},
+		}];
+
+		expect(isInvalid(invalidAddress)).to.equal(true);
+	});
 });
