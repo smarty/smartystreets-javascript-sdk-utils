@@ -17,11 +17,7 @@ function isInvalid (result) {
 	const addressIsAtLeastPartiallyVerified = verificationStatus === "Verified" || verificationStatus === "Partial";
 	const addressIsConfirmedInSomeWay = dpvMatchCode !== "N";
 
-	return !!(
-		exactlyOneResult &&
-		(verificationStatusIsNone || addressPrecisionIsPreciseEnough || dpvMatchCodeIsN || undefinedDpvMatchCodeAndVerificationStatus || (!addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay))
-	);
-
+	return exactlyOneResult && (verificationStatusIsNone || addressPrecisionIsPreciseEnough || dpvMatchCodeIsN || undefinedDpvMatchCodeAndVerificationStatus || (!addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay));
 }
 
 module.exports = isInvalid;
