@@ -1,6 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 const isValid = require("../src/isValid");
+const isInvalid = require("../src/isInvalid");
 
 describe("A valid address", function () {
 	it("is exactly one item and has a 'Verified' verification status.", function () {
@@ -11,6 +12,7 @@ describe("A valid address", function () {
 		}];
 
 		expect(isValid(verifiedAddress)).to.equal(true);
+		expect(isInvalid(verifiedAddress)).to.equal(false);
 	});
 
 	it("is exactly one item and has a 'Partial' verification status.", function () {
@@ -21,6 +23,7 @@ describe("A valid address", function () {
 		}];
 
 		expect(isValid(verifiedAddress)).to.equal(true);
+		expect(isInvalid(verifiedAddress)).to.equal(false);
 	});
 
 	it("is exactly one item and is confirmed in some way.", function () {
@@ -37,5 +40,7 @@ describe("A valid address", function () {
 
 		expect(isValid(dpvY)).to.equal(true);
 		expect(isValid(dpvN)).to.equal(false);
+		expect(isInvalid(dpvY)).to.equal(false);
+		expect(isInvalid(dpvN)).to.equal(true);
 	});
 });
