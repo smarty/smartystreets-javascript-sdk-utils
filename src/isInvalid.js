@@ -6,7 +6,9 @@ function isInvalid (result) {
 		return true;
 	} else if (exactlyOneResult) {
 		const verificationStatus = result[0].analysis.verificationStatus;
-		if (verificationStatus === "None") {
+		const addressPrecision = result[0].analysis.addressPrecision;
+
+		if (verificationStatus === "None" || addressPrecision === "None") {
 			return true;
 		}
 	}

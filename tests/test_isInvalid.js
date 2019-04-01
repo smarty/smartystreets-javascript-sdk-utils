@@ -18,4 +18,14 @@ describe("An invalid address", function () {
 
 		expect(isInvalid(invalidAddress)).to.equal(true);
 	});
+
+	it("is exactly one item and has a address precision of 'None'", function () {
+		const invalidAddress = [{
+			analysis: {
+				addressPrecision: "None",
+			},
+		}];
+
+		expect(isInvalid(invalidAddress)).to.equal(true);
+	});
 });
