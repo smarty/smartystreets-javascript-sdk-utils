@@ -3,6 +3,12 @@ const expect = chai.expect;
 const isMissingSecondary = require("../src/isMissingSecondary");
 
 describe("An address missing a secondary number", function () {
+	it("has at least 1 result", function () {
+		const nonAmbiguous = [];
+
+		expect(isMissingSecondary(nonAmbiguous)).to.equal(false);
+	});
+
 	it("is indicated with 'N1' or 'R1' dpv footnotes, or by 'H#' in the footnotes.", function () {
 		const n1Address = [{
 			analysis: {
