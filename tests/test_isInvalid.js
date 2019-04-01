@@ -29,12 +29,14 @@ describe("An invalid address", function () {
 		const addressPrecisionPremise = [{
 			analysis: {
 				addressPrecision: "Premise",
+				dpvMatchCode: "foo",
 			},
 		}];
 
 		const addressPrecisionDeliveryPoint = [{
 			analysis: {
 				addressPrecision: "DeliveryPoint",
+				dpvMatchCode: "foo",
 			},
 		}];
 
@@ -47,6 +49,17 @@ describe("An invalid address", function () {
 		const invalidAddress = [{
 			analysis: {
 				dpvMatchCode: "N",
+			},
+		}];
+
+		expect(isInvalid(invalidAddress)).to.equal(true);
+	});
+
+	it("is exactly one item and verification status and dpv match code are both undefined.", function () {
+		const invalidAddress = [{
+			analysis: {
+				dpvMatchCode: undefined,
+				verificationStatus: undefined,
 			},
 		}];
 
