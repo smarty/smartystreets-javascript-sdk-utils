@@ -5,13 +5,22 @@ function isInvalid (result) {
 		return true;
 	}
 
-	const exactlyOneResult = result.length === 1;
-	const addressPrecisionIsPreciseEnough = result[0].analysis.addressPrecision && result[0].analysis.addressPrecision !== "Premise" && result[0].analysis.addressPrecision !== "DeliveryPoint";
-	const verificationStatusIsNone = result[0].analysis.verificationStatus === "None";
-	const dpvMatchCodeIsN = result[0].analysis.dpvMatchCode === "N";
-	const undefinedDpvMatchCodeAndVerificationStatus = result[0].analysis.verificationStatus === undefined && result[0].analysis.dpvMatchCode === undefined;
+	const verificationStatus = result[0].analysis.verificationStatus;
+	const dpvMatchCode = result[0].analysis.dpvMatchCode;
+	const addressPrecision = result[0].analysis.addressPrecision;
 
-	return !!(exactlyOneResult && (verificationStatusIsNone || (addressPrecisionIsPreciseEnough || dpvMatchCodeIsN || undefinedDpvMatchCodeAndVerificationStatus)));
+	const exactlyOneResult = result.length === 1;
+	const addressPrecisionIsPreciseEnough = addressPrecision && addressPrecision !== "Premise" && addressPrecision !== "DeliveryPoint";
+	const verificationStatusIsNone = verificationStatus === "None";
+	const dpvMatchCodeIsN = dpvMatchCode === "N";
+	const undefinedDpvMatchCodeAndVerificationStatus = verificationStatus === undefined && dpvMatchCode === undefined;
+	const addressIsAtLeastPartiallyVerified = verificationStatus === "Verified" || verificationStatus === "Partial";
+	const addressIsConfirmedInSomeWay = dpvMatchCode !== "N";
+
+	return !!(
+		exactlyOneResult &&
+		(verificationStatusIsNone || addressPrecisionIsPreciseEnough || dpvMatchCodeIsN || undefinedDpvMatchCodeAndVerificationStatus || (!addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay))
+	);
 
 }
 
