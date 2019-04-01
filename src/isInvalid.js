@@ -5,10 +5,10 @@ function isInvalid (result) {
 	if (noResults) {
 		return true;
 	} else if (exactlyOneResult) {
-		const verificationStatus = result[0].analysis.verificationStatus;
-		const addressPrecision = result[0].analysis.addressPrecision;
+		const addressPrecisionIsPreciseEnough = result[0].analysis.addressPrecision !== "Premise" && result[0].analysis.addressPrecision !== "DeliveryPoint";
 
-		if (verificationStatus === "None" || addressPrecision === "None") {
+		const verificationStatusIsNone = result[0].analysis.verificationStatus === "None";
+		if (verificationStatusIsNone || (addressPrecisionIsPreciseEnough)) {
 			return true;
 		}
 	}
