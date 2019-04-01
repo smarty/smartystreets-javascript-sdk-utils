@@ -1,7 +1,25 @@
 {
   "name": "smartystreets-javascript-sdk-utils",
   "version": "0.0.0",
-  "description": "",
+  "description": "Utils library to use with the SmartyStreets Javascript SDK",
+  "keywords": [
+    "smartystreets",
+    "address",
+    "validation",
+    "verification",
+    "verify",
+    "validate",
+    "street-address",
+    "geocoding",
+    "addresses",
+    "zipcode",
+    "autocomplete",
+    "autosuggest",
+    "suggestions",
+    "international",
+    "http",
+    "sdk"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "mocha 'tests/**/*.js'"
