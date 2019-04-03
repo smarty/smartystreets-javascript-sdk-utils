@@ -1,12 +1,10 @@
-const chai = require("chai");
-const expect = chai.expect;
 const isMissingSecondary = require("../src/isMissingSecondary");
 
 describe("An address missing a secondary number", function () {
 	it("has at least 1 result", function () {
 		const nonAmbiguous = [];
 
-		expect(isMissingSecondary(nonAmbiguous)).to.equal(false);
+		expect(isMissingSecondary(nonAmbiguous)).toEqual(false);
 	});
 
 	it("is indicated with 'N1' or 'R1' dpv footnotes, or by 'H#' in the footnotes.", function () {
@@ -29,9 +27,9 @@ describe("An address missing a secondary number", function () {
 			analysis: {}
 		}];
 
-		expect(isMissingSecondary(n1Address)).to.equal(true);
-		expect(isMissingSecondary(r1Address)).to.equal(true);
-		expect(isMissingSecondary(hSharpAddress)).to.equal(true);
-		expect(isMissingSecondary(noQualifyingFootnotesPresent)).to.equal(false);
+		expect(isMissingSecondary(n1Address)).toEqual(true);
+		expect(isMissingSecondary(r1Address)).toEqual(true);
+		expect(isMissingSecondary(hSharpAddress)).toEqual(true);
+		expect(isMissingSecondary(noQualifyingFootnotesPresent)).toEqual(false);
 	});
 });

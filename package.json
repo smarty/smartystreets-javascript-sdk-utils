@@ -22,7 +22,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'tests/**/*.js'"
+    "test": "jest tests"
   },
   "repository": {
     "type": "git",
@@ -34,8 +34,8 @@
     "url": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils/issues"
   },
   "homepage": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils#readme",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+  "devDependencies": {},
+  "dependencies": {
+    "jest": "^24.7.0"
   }
 }
