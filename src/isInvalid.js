@@ -1,4 +1,4 @@
-function isInvalid (result) {
+function isInvalid ({result}) {
 	const noResults = result.length === 0;
 
 	if (noResults) {

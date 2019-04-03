@@ -1,7 +1,7 @@
 const isInvalid = require("../src/isInvalid");
 
-function isValid (result) {
-	return !isInvalid(result);
+function isValid (lookup) {
+	return !isInvalid(lookup);
 }
 
 module.exports = isValid;

@@ -1,4 +1,4 @@
-function isMissingSecondary (result) {
+function isMissingSecondary ({result}) {
 	const noResults = result.length === 0;
 
 	if (noResults) {

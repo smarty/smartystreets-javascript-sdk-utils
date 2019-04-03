@@ -1,4 +1,4 @@
-function isAmbiguous (result) {
+function isAmbiguous ({result}) {
 	return result.length > 1;
 }
 
