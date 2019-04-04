@@ -21,7 +21,7 @@ Determines if the lookup returned multiple possible match candidates. Returns **
   - `lookup`: **([&lt;Object&gt;](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** a validated [US Street Lookup](https://github.com/smartystreets/smartystreets-javascript-sdk/blob/master/src/us_street/Lookup.js)
 
 ## `isMissingSecondary()`
-  - Determines if the lookup requires a secondary address. Returns **[&lt;Boolean&gt;](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**.
+Determines if the lookup requires a secondary address. Returns **[&lt;Boolean&gt;](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**.
 
 ### Parameters
   - `lookup`: **([&lt;Object&gt;](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** a validated [US Street Lookup](https://github.com/smartystreets/smartystreets-javascript-sdk/blob/master/src/us_street/Lookup.js)
