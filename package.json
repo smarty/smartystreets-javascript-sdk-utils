@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils#readme",
   "devDependencies": {
-    "jest": "^24.7.0"
+    "jest": "^27.0.6"
   },
   "dependencies": {}
 }
