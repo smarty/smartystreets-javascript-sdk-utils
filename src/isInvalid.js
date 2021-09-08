@@ -1,5 +1,5 @@
 function isInvalid ({result}) {
-	const noResults = result.length === 0;
+	const noResults = result.length === 0 || !result[0].analysis;
 
 	if (noResults) {
 		return true;
@@ -17,7 +17,19 @@ function isInvalid ({result}) {
 	const addressIsAtLeastPartiallyVerified = verificationStatus === "Verified" || verificationStatus === "Partial";
 	const addressIsConfirmedInSomeWay = dpvMatchCode !== "N";
 
-	return exactlyOneResult && (verificationStatusIsNone || addressPrecisionIsPreciseEnough || dpvMatchCodeIsN || undefinedDpvMatchCodeAndVerificationStatus || (!addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay));
+	if (exactlyOneResult) {
+		if (result[0].analysis?.enhanced_match) {
+			const enhancedMatch = result[0].analysis.enhanced_match.split(",");
+			return enhancedMatch.includes("none");
+		}
+		else if (verificationStatusIsNone) return true;
+		else if (addressPrecisionIsPreciseEnough) return true;
+		else if (dpvMatchCodeIsN) return true;
+		else if (undefinedDpvMatchCodeAndVerificationStatus) return true;
+		else return !addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay;
+	} else {
+		return false;
+	}
 }
 
 module.exports = isInvalid;

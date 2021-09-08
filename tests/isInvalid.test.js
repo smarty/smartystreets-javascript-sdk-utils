@@ -83,4 +83,24 @@ describe("An invalid address", function () {
 		expect(isInvalid(invalidAddress)).toEqual(true);
 		expect(isValid(invalidAddress)).toEqual(false);
 	});
+
+	it("is exactly one item and enhanced match response is defined.", function () {
+		const invalidAddress = {
+			result: [{
+				analysis: {
+					enhanced_match: "none-postal-match,postal-match,none",
+				},
+			}]
+		};
+		const noEnhancedMatch = {
+			result: [{
+				analysis: {
+					enhanced_match: "",
+				},
+			}]
+		};
+
+		expect(isInvalid(invalidAddress)).toEqual(true);
+		expect(isInvalid(noEnhancedMatch)).toEqual(true);
+	});
 });
