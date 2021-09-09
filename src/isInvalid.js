@@ -27,9 +27,9 @@ function isInvalid ({result}) {
 		else if (dpvMatchCodeIsN) return true;
 		else if (undefinedDpvMatchCodeAndVerificationStatus) return true;
 		else return !addressIsAtLeastPartiallyVerified && !addressIsConfirmedInSomeWay;
-	} else {
-		return false;
 	}
+
+	return false;
 }
 
 module.exports = isInvalid;
