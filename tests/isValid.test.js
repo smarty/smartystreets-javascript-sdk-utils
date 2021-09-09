@@ -49,4 +49,24 @@ describe("A valid address", function () {
 		expect(isInvalid(dpvY)).toEqual(false);
 		expect(isInvalid(dpvN)).toEqual(true);
 	});
+
+	it("is exactly one item and includes enhanced matching param.", function () {
+		const enhancedMatchingOneResponse = {
+			result: [{
+				analysis: {
+					enhanced_match: "postal-match",
+				},
+			}]
+		};
+		const enhancedMatchingMultipleResponse = {
+			result: [{
+				analysis: {
+					enhanced_match: "postal-match,missing-secondary,unknown-secondary",
+				},
+			}]
+		};
+
+		expect(isInvalid(enhancedMatchingOneResponse)).toEqual(false);
+		expect(isInvalid(enhancedMatchingMultipleResponse)).toEqual(false);
+	});
 });
