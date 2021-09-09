@@ -42,25 +42,4 @@ describe("An address missing a secondary number", function () {
 		expect(isMissingSecondary(hSharpAddress)).toEqual(true);
 		expect(isMissingSecondary(noQualifyingFootnotesPresent)).toEqual(false);
 	});
-
-	it("is using enhanced matching", function () {
-		const secondaryIsReturned = {
-			result: [{
-				analysis: {
-					enhanced_match: "postal-match",
-				}
-			}]
-		};
-
-		const noSecondary = {
-			result: [{
-				analysis: {
-					enhanced_match: "unknown-secondary",
-				}
-			}]
-		};
-
-		expect(isMissingSecondary(secondaryIsReturned)).toEqual(false);
-		expect(isMissingSecondary(noSecondary)).toEqual(true);
-	})
 });
