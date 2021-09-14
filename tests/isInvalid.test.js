@@ -11,6 +11,26 @@ describe("An invalid address", function () {
 		expect(isValid(invalidAddress)).toEqual(false);
 	});
 
+	it("is exactly one item and has no properties", function () {
+		const invalidAddress = {
+			result: [{}],
+		};
+
+		expect(isInvalid(invalidAddress)).toEqual(true);
+		expect(isValid(invalidAddress)).toEqual(false);
+	});
+
+	it("is exactly one item and has analysis as an empty object", function () {
+		const invalidAddress = {
+			result: [{
+				analysis: {}
+			}]
+		};
+
+		expect(isInvalid(invalidAddress)).toEqual(true);
+		expect(isValid(invalidAddress)).toEqual(false);
+	});
+
 	it("is exactly one item and has a verification status of 'None'", function () {
 		const invalidAddress = {
 			result: [{

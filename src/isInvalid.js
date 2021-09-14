@@ -18,7 +18,7 @@ function isInvalid ({result}) {
 	const addressIsConfirmedInSomeWay = dpvMatchCode !== "N";
 
 	if (exactlyOneResult) {
-		if (result[0].analysis?.enhanced_match) {
+		if (result[0].analysis.enhanced_match) {
 			const enhancedMatch = result[0].analysis.enhanced_match.split(",");
 			return enhancedMatch.includes("none");
 		}
