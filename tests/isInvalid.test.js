@@ -4,7 +4,7 @@ const isValid = require("../src/isValid");
 describe("An invalid address", function () {
 	it("is an empty result.", function () {
 		const invalidAddress = {
-			result: []
+			result: [],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -23,8 +23,8 @@ describe("An invalid address", function () {
 	it("is exactly one item and has analysis as an empty object", function () {
 		const invalidAddress = {
 			result: [{
-				analysis: {}
-			}]
+				analysis: {},
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -37,7 +37,7 @@ describe("An invalid address", function () {
 				analysis: {
 					verificationStatus: "None",
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -50,7 +50,7 @@ describe("An invalid address", function () {
 				analysis: {
 					addressPrecision: "Not Premise or DeliveryPoint",
 				},
-			}]
+			}],
 		};
 
 		const addressPrecisionPremise = {
@@ -59,7 +59,7 @@ describe("An invalid address", function () {
 					addressPrecision: "Premise",
 					dpvMatchCode: "foo",
 				},
-			}]
+			}],
 		};
 
 		const addressPrecisionDeliveryPoint = {
@@ -68,7 +68,7 @@ describe("An invalid address", function () {
 					addressPrecision: "DeliveryPoint",
 					dpvMatchCode: "foo",
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -83,7 +83,7 @@ describe("An invalid address", function () {
 				analysis: {
 					dpvMatchCode: "N",
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -97,7 +97,7 @@ describe("An invalid address", function () {
 					dpvMatchCode: undefined,
 					verificationStatus: undefined,
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);
@@ -110,14 +110,14 @@ describe("An invalid address", function () {
 				analysis: {
 					enhanced_match: "none-postal-match,postal-match,none",
 				},
-			}]
+			}],
 		};
 		const noEnhancedMatch = {
 			result: [{
 				analysis: {
 					enhanced_match: "",
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(invalidAddress)).toEqual(true);

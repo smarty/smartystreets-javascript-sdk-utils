@@ -3,7 +3,7 @@ const isMissingSecondary = require("../src/isMissingSecondary");
 describe("An address missing a secondary number", function () {
 	it("has at least 1 result", function () {
 		const nonAmbiguous = {
-			result: []
+			result: [],
 		};
 
 		expect(isMissingSecondary(nonAmbiguous)).toEqual(false);
@@ -15,26 +15,26 @@ describe("An address missing a secondary number", function () {
 				analysis: {
 					dpvFootnotes: "N1",
 				},
-			}]
+			}],
 		};
 		const r1Address = {
 			result: [{
 				analysis: {
 					dpvFootnotes: "R1",
 				},
-			}]
+			}],
 		};
 		const hSharpAddress = {
 			result: [{
 				analysis: {
 					footnotes: "H#",
 				},
-			}]
+			}],
 		};
 		const noQualifyingFootnotesPresent = {
 			result: [{
-				analysis: {}
-			}]
+				analysis: {},
+			}],
 		};
 
 		expect(isMissingSecondary(n1Address)).toEqual(true);
@@ -48,19 +48,19 @@ describe("An address missing a secondary number", function () {
 			result: [{
 				analysis: {
 					enhanced_match: "postal-match",
-				}
-			}]
+				},
+			}],
 		};
 
 		const noSecondary = {
 			result: [{
 				analysis: {
 					enhanced_match: "unknown-secondary",
-				}
-			}]
+				},
+			}],
 		};
 
 		expect(isMissingSecondary(secondaryIsReturned)).toEqual(false);
 		expect(isMissingSecondary(noSecondary)).toEqual(true);
-	})
+	});
 });

@@ -8,7 +8,7 @@ describe("A valid address", function () {
 				analysis: {
 					verificationStatus: "Verified",
 				},
-			}]
+			}],
 		};
 
 		expect(isValid(verifiedAddress)).toEqual(true);
@@ -21,7 +21,7 @@ describe("A valid address", function () {
 				analysis: {
 					verificationStatus: "Partial",
 				},
-			}]
+			}],
 		};
 
 		expect(isValid(verifiedAddress)).toEqual(true);
@@ -34,14 +34,14 @@ describe("A valid address", function () {
 				analysis: {
 					dpvMatchCode: "Y",
 				},
-			}]
+			}],
 		};
 		const dpvN = {
 			result: [{
 				analysis: {
 					dpvMatchCode: "N",
 				},
-			}]
+			}],
 		};
 
 		expect(isValid(dpvY)).toEqual(true);
@@ -56,14 +56,14 @@ describe("A valid address", function () {
 				analysis: {
 					enhanced_match: "postal-match",
 				},
-			}]
+			}],
 		};
 		const enhancedMatchingMultipleResponse = {
 			result: [{
 				analysis: {
 					enhanced_match: "postal-match,missing-secondary,unknown-secondary",
 				},
-			}]
+			}],
 		};
 
 		expect(isInvalid(enhancedMatchingOneResponse)).toEqual(false);
