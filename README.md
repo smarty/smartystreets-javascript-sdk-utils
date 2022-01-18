@@ -1,6 +1,6 @@
-# SmartyStreets JavaScript SDK Utils
+# Smarty JavaScript SDK Utils
 
-The SmartyStreets JavaScript SDK Utils provide an additional level of analysis for US Street lookups validated through the [SmartyStreets JavaScript SDK](https://www.npmjs.com/package/smartystreets-javascript-sdk). This package consists of the following utilities for SmartyStreets API response analysis.
+The Smarty JavaScript SDK Utils provide an additional level of analysis for US Street lookups validated through the [Smarty JavaScript SDK](https://www.npmjs.com/package/smartystreets-javascript-sdk). This package consists of the following utilities for Smarty API response analysis.
 
 ## `isValid()`
 Determines if the lookup is considered mail deliverable by the USPS. Returns **[&lt;Boolean&gt;](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**.
@@ -30,15 +30,15 @@ Determines if the lookup requires a secondary address. Returns **[&lt;Boolean&gt
 # Example
 This example is modified from the [US Street API code example](https://github.com/smartystreets/smartystreets-javascript-sdk/blob/master/examples/us_street.js).
 
-    const SmartyStreetsSDK = require("smartystreets-javascript-sdk");
-    const SmartyStreetsCore = SmartyStreetsSDK.core;
-    const Lookup = SmartyStreetsSDK.usStreet.Lookup;
+    const SmartySDK = require("smartystreets-javascript-sdk");
+    const SmartyCore = SmartySDK.core;
+    const Lookup = SmartySDK.usStreet.Lookup;
     const utils = require("smartystreets-javascript-sdk-utils");
     
     let authId = process.env.SMARTY_AUTH_ID;
     let authToken = process.env.SMARTY_AUTH_TOKEN;
     
-    let clientBuilder = new SmartyStreetsCore.ClientBuilder(new SmartyStreetsCore.StaticCredentials(authId, authToken));
+    let clientBuilder = new SmartyCore.ClientBuilder(new SmartyCore.StaticCredentials(authId, authToken));
     let client = clientBuilder.buildUsStreetApiClient();
     
     let lookup1 = new Lookup();

@@ -1,8 +1,9 @@
 {
   "name": "smartystreets-javascript-sdk-utils",
   "version": "0.0.0",
-  "description": "Utils library to use with the SmartyStreets Javascript SDK",
+  "description": "Utils library to use with the Smarty Javascript SDK",
   "keywords": [
+    "smarty",
     "smartystreets",
     "address",
     "validation",
@@ -28,7 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/smartystreets/smartystreets-javascript-sdk-utils.git"
   },
-  "author": "SmartyStreets SDK Team <support@smartystreets.com> (https://www.smartystreets.com)",
+  "author": "Smarty SDK Team <support@smarty.com> (https://www.smarty.com)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/smartystreets/smartystreets-javascript-sdk-utils/issues"
