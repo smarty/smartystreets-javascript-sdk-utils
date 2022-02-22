@@ -47,7 +47,7 @@ describe("An address missing a secondary number", function () {
 		const secondaryIsReturned = {
 			result: [{
 				analysis: {
-					enhanced_match: "postal-match",
+					enhancedMatch: "postal-match",
 				},
 			}],
 		};
@@ -55,7 +55,7 @@ describe("An address missing a secondary number", function () {
 		const noSecondary = {
 			result: [{
 				analysis: {
-					enhanced_match: "unknown-secondary",
+					enhancedMatch: "unknown-secondary",
 				},
 			}],
 		};

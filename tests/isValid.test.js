@@ -54,18 +54,19 @@ describe("A valid address", function () {
 		const enhancedMatchingOneResponse = {
 			result: [{
 				analysis: {
-					enhanced_match: "postal-match",
+					enhancedMatch: "postal-match",
 				},
 			}],
 		};
 		const enhancedMatchingMultipleResponse = {
 			result: [{
 				analysis: {
-					enhanced_match: "postal-match,missing-secondary,unknown-secondary",
+					enhancedMatch: "postal-match,missing-secondary,unknown-secondary",
 				},
 			}],
 		};
 
+		expect(isValid(enhancedMatchingOneResponse)).toEqual(true);
 		expect(isInvalid(enhancedMatchingOneResponse)).toEqual(false);
 		expect(isInvalid(enhancedMatchingMultipleResponse)).toEqual(false);
 	});
