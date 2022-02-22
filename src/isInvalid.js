@@ -18,8 +18,8 @@ function isInvalid ({result}) {
 	const addressIsConfirmedInSomeWay = dpvMatchCode !== "N";
 
 	if (exactlyOneResult) {
-		if (result[0].analysis.enhanced_match) {
-			const enhancedMatch = result[0].analysis.enhanced_match.split(",");
+		if (result[0].analysis.enhancedMatch) {
+			const enhancedMatch = result[0].analysis.enhancedMatch.split(",");
 			return enhancedMatch.includes("none");
 		}
 		else if (verificationStatusIsNone) return true;

@@ -5,7 +5,7 @@ function isMissingSecondary ({result}) {
 		return false;
 	}
 
-	const enhancedMatchingResponse = result[0].analysis.enhanced_match;
+	const enhancedMatchingResponse = result[0].analysis.enhancedMatch;
 
 	if (enhancedMatchingResponse) {
 		const hasMissingSecondary = enhancedMatchingResponse.includes("missing-secondary");

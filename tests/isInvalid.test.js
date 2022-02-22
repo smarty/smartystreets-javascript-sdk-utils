@@ -108,14 +108,14 @@ describe("An invalid address", function () {
 		const invalidAddress = {
 			result: [{
 				analysis: {
-					enhanced_match: "none-postal-match,postal-match,none",
+					enhancedMatch: "none-postal-match,postal-match,none",
 				},
 			}],
 		};
 		const noEnhancedMatch = {
 			result: [{
 				analysis: {
-					enhanced_match: "",
+					enhancedMatch: "",
 				},
 			}],
 		};
