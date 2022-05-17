@@ -1,3 +1,5 @@
+# SMARTY DISCLAIMER: Subject to the terms of the associated license agreement, this software is freely available for your use. This software is FREE, AS IN PUPPIES, and is a gift. Enjoy your new responsibility. This means that while we may consider enhancement requests, we may or may not choose to entertain requests at our sole and absolute discretion.
+
 # Smarty JavaScript SDK Utils
 
 The Smarty JavaScript SDK Utils provide an additional level of analysis for US Street lookups validated through the [Smarty JavaScript SDK](https://www.npmjs.com/package/smartystreets-javascript-sdk). This package consists of the following utilities for Smarty API response analysis.
